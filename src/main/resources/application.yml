@@ -1,0 +1,21 @@
+# 数据库配置
+# 默认使用mysql的驱动是8.x的版本，注意driver-class-name，url中增加时区的配置
+  spring.datasource.url=jdbc:mysql://47.98.225.173:3306/phone?serverTimezone=Asia/Shanghai
+  spring.datasource.username=root
+  spring.datasource.password=123456
+  spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+
+  # mybatis配置
+  # 配置别名需要扫描的包
+  mybatis.type-aliases-package=com.qfedu.phone.entity
+  # 引入映射文件
+  mybatis.mapper-locations=classpath:mapper/*.xml
+
+#spring.thymeleaf.cache=false
+#spring.thymeleaf.encoding=utf-8
+#spring.thymeleaf.prefix=classpath:/templates/
+#spring.thymeleaf.suffix=.html
+#spring.thymeleaf.mode=HTML5
+#spring.thymeleaf.servlet.content-type=text/html
+pagehelper:
+  helper-dialect: mysql

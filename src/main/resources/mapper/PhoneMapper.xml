@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qfedu.phone.dao.PhoneMapper">
+    <resultMap id="phoneMapper" type="com.qfedu.phone.entity.Phone">
+        <id column="id" property="id"></id>
+        <result column="phonename" property="phonename"></result>
+        <result column="brand" property="brand"></result>
+        <result column="storage" property="storage"></result>
+        <result column="memory" property="memory"></result>
+        <result column="colour" property="colour"></result>
+        <result column="quantity" property="quantity"></result>
+        <result column="price" property="price"></result>
+        <result column="img" property="img"></result>
+    </resultMap>
+
+    <insert id="insert" parameterType="com.qfedu.phone.entity.Phone">
+        insert into phone (name, phonename, brand, storage, memory, colour, quantity, price, img) values
+        (#{name}, #{phonename}, #{brand}, #{storage}, #{memory}, #{colour}, #{quantity}, #{price}, #{img})
+    </insert>
+    <update id="update">
+        update phone set phonename=#{phonename}, brand=#{brand}, storage=#{storage}, memory=#{memory},
+         colour=#{colour}, quantity=#{quantity}, price=#{price}, img=#{img} where id = #{id}
+    </update>
+
+    <delete id="del">
+        delete from phone where id=#{id}
+    </delete>
+
+    <select id="findAll" resultType="com.qfedu.phone.entity.Phone">
+        select * from phone
+    </select>
+</mapper>
